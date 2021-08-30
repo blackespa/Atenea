@@ -1,0 +1,106 @@
+@charset "UTF-8";
+.bg-light {
+  background-color: #41285c !important;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(65, 40, 92, 0.15) !important;
+}
+
+.navbar-light .navbar-brand {
+  color: #f8fafc;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #f8fafc;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #f8fafc !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #bea6d8 !important;
+}
+
+.dropdown-item:hover {
+  font-weight: 400;
+  color: #41285c !important;
+  background-color: #bea6d8 !important;
+}
+
+#content {
+  top: 0px;
+  left: 0px;
+  width: calc(100vw - 50px);
+  height: calc(100vh);
+  background-color: #f8fafc;
+  padding: 0px;
+}
+
+/* Remove default bullets */
+ul, #tree {
+  list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+#tree {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "▶";
+  color: #41285C;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
+
+/****************************** Password **********************************/
+.pass_show {
+  position: relative;
+}
+
+.pass_show .ptxt {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  z-index: 1;
+  color: #FF0004;
+  margin-top: -10px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.pass_show .ptxt:hover {
+  color: #00A41E;
+}
