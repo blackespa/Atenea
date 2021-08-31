@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <form id="formMenu">
-                        <input type="hidden" class="form-control" name="menu_id" id="menu_id">
+                        <input type="text" class="form-control" name="menu_id" id="menu_id">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -146,8 +146,7 @@
                 .then((response) => {
                     //console.log(response);
                     $("#adminTreeView").html(response.data);
-                    $('#formMenu').trigger("reset");
-                    $("#btnSaveMenu").html("<i class='far fa-save'></i> Agregar Nuevo");
+                    $('#btnClearMenu').trigger("click");
                     // Se obtienen todos los menus para actualizar el Select/option del form
                     axios.post('/menus/refreshAllMenus')
                     .then((response) => {
@@ -203,11 +202,12 @@
         var menu_parent_id = $('#menu_parent_id').val();
         var menu_enabled = $("#menu_enabled").is(':checked') ? 1 : 0;
         //***** Validaciones *****
-        console.log('menu_id',menu_id);
-        console.log('menu_name',menu_name);
-        console.log('menu_url',menu_url);
-        console.log('menu_parent_id',menu_parent_id);
-        console.log('menu_enabled',menu_enabled);
+        //console.log('============================');
+        //console.log('menu_id',menu_id);
+        //console.log('menu_name',menu_name);
+        //console.log('menu_url',menu_url);
+        //console.log('menu_parent_id',menu_parent_id);
+        //console.log('menu_enabled',menu_enabled);
 
         if (menu_id === "") {
             axios.post('/menus/store',{
@@ -220,8 +220,7 @@
             })
             .then((response) => {
                 //console.log(response);
-                $('#formMenu').trigger("reset");
-                $("#btnSaveMenu").html("<i class='far fa-save'></i> Agregar Nuevo");
+                $('#btnClearMenu').trigger("click");
                 $("#adminTreeView").html(response.data);
 
             }).catch((error)=>{
@@ -241,8 +240,7 @@
             })
             .then((response) => {
                 //console.log(response);
-                $('#formMenu').trigger("reset");
-                $("#btnSaveMenu").html("<i class='far fa-save'></i> Agregar Nuevo");
+                $('#btnClearMenu').trigger("click");
                 $("#adminTreeView").html(response.data);
 
             }).catch((error)=>{
