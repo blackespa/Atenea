@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <form id="formMenu">
-                        <input type="text" class="form-control" name="menu_id" id="menu_id">
+                        <input type="hidden" class="form-control" name="menu_id" id="menu_id">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
